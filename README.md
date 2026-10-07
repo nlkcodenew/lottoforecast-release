@@ -4,8 +4,8 @@ Kho phát hành công khai cho **LottoForecast Pro** trên TrimUI Brick Pro (`10
 
 ## Cài đặt mới
 
-1. Tải `lottoforecast-v0.1.1.zip` trong phần **Releases**.
-2. Kiểm tra SHA-256 theo file `lottoforecast-v0.1.1.zip.sha256`.
+1. Tải `lottoforecast-v0.1.2.zip` trong phần **Releases**.
+2. Kiểm tra SHA-256 theo file `lottoforecast-v0.1.2.zip.sha256`.
 3. Giải nén vào thư mục gốc của thẻ nhớ để nhận `Apps/LottoForecast/`.
 4. Mở LottoForecast từ danh sách Apps.
 
