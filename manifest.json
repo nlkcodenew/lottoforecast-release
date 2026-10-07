@@ -2,7 +2,7 @@
   "files": [
     {
       "path": "VERSION",
-      "sha256": "297b50f08386d3521f8fdaf2f78eb8d9d0acdf452d2e61596905fba37208c792",
+      "sha256": "2d2454ef0edeb462a6ce8b25d387aaa74df08093d5cea0428a10ce55510c6326",
       "size": 6
     },
     {
@@ -17,8 +17,8 @@
     },
     {
       "path": "bin/lottoforecast",
-      "sha256": "f01a881484d866ca3c1b200200a65dba78eafd82b3f445c27c529c9a134ca284",
-      "size": 5291704
+      "sha256": "a4b524ccbc4146c15e381cd09f98e679d2941b90cf1d046298c2c36b8b6f392d",
+      "size": 5316280
     },
     {
       "path": "config.json",
@@ -43,10 +43,10 @@
   ],
   "kid": "r3",
   "release_asset": {
-    "name": "lottoforecast-v0.1.2.zip",
-    "sha256": "45dacf5d1fc97384243002e2f2081398740720579056c3747473e6fd4417b88b",
-    "size": 3240123
+    "name": "lottoforecast-v0.1.3.zip",
+    "sha256": "74ba71ca7856a9150d5de2eb7f9be8981c73e40fdba6985520b76f12d847604b",
+    "size": 3255119
   },
-  "signature": "myb4fRZQX6d_nD6um4Sr7DCg4ebMylCx4JNLQ9WgqYQFqh687i_lKKk2XP8R28OonwHBCxtW53-rXi_-83NlBw",
-  "version": "0.1.2"
+  "signature": "cwVZRt7WRmKWCOmg0LutalCtIewlSUDb-1T6tXCu43ZM_RW9BarbRQrQ67NkocvTK7vvksr8ntSOum54RZAqAQ",
+  "version": "0.1.3"
 }
