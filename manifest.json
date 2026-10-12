@@ -2,8 +2,8 @@
   "files": [
     {
       "path": "VERSION",
-      "sha256": "7470694a0b5af87394b523c1a640e2ad099efbe0e6d9e6d2f7a70703e4d04457",
-      "size": 7
+      "sha256": "81bcdedeb7106e6a28bbe2c659988cd028a10af5e626825300b25620c2347644",
+      "size": 6
     },
     {
       "path": "assets/donate-qr.png",
@@ -17,7 +17,7 @@
     },
     {
       "path": "bin/lottoforecast",
-      "sha256": "277cbfae5a98a3b89c716956862135cbc1e5bfc2b1adc6fe2aee1d0d30714bca",
+      "sha256": "1ac9ee038db61521922444d80ae059ba8cb725cb8377e0659840dabb97bfd288",
       "size": 5324568
     },
     {
@@ -32,21 +32,21 @@
     },
     {
       "path": "launch.sh",
-      "sha256": "f201eaa45470e927742a3c2fb8c655bf1c758d8055be775eb584998e7806a2c8",
-      "size": 1827
+      "sha256": "d149903855851beff6773b2a7777a5648b4b78578b99dfcad768f201b913597e",
+      "size": 2721
     },
     {
       "path": "ota-update.sh",
-      "sha256": "a1531272378f9dabfbf45a0e99378c04455c200956796afcff06c8928765e5a0",
-      "size": 10386
+      "sha256": "e6a4b0bc2ae1e5f8de1202dff71f45506c4293e7711b003686d1f9132d666440",
+      "size": 10755
     }
   ],
   "kid": "r3",
   "release_asset": {
-    "name": "lottoforecast-v0.1.16.zip",
-    "sha256": "c99a37de4383660b013b5e61053767e098066a3fbc48a558571ec7e4ee471594",
-    "size": 3243751
+    "name": "lottoforecast-v0.1.17.zip",
+    "sha256": "8d8d8cc6e230e18fbac46e470e398e5c68d473edfa438e345d2efe830fa6d1a1",
+    "size": 3248125
   },
-  "signature": "njy8ez7sQcRRxurEvBUWkRO24cYn8y2wbu2lKGfnjgnSt0Buu2nEG_xFcNIbP14Typv7TsWYjeUPvGplYlE7Ag",
-  "version": "0.1.16"
+  "signature": "3ZJkRblwidzgMkP8CArw3E96I-33Tnr26z0OZFXmdJb5MV3uDtk4fZTAkV4bGvVEswM0LK4zxXPtMnbxp9psBA",
+  "version": "0.1.17"
 }

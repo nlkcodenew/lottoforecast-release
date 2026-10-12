@@ -8,6 +8,21 @@ case "$0" in
 esac
 LOG="$APP/LottoForecast.log"
 export LOTTO_APP_DIR="$APP"
+# Chong chay sai thu muc (TrimUI Remote): neu binary khong ton tai o APP suy ra
+# thi fallback ve duong dan chuan tren Brick + ghi log canh bao.
+if [ ! -f "$APP/bin/lottoforecast" ]; then
+  echo "[launch] WARN: $APP/bin/lottoforecast missing (cwd sai?) — fallback /mnt/SDCARD/Apps/LottoForecast" >> "$LOG" 2>/dev/null || true
+  APP="$SDCARD_PATH/Apps/LottoForecast"
+  LOG="$APP/LottoForecast.log"
+  export LOTTO_APP_DIR="$APP"
+fi
+# Single-instance: tranh 2 vong launch chay song song (double-instance khi chay tay).
+LOCKDIR="${TMPDIR:-/tmp}/lotto-launch-lock"
+if ! mkdir "$LOCKDIR" 2>/dev/null; then
+  echo "[launch] another instance running ($LOCKDIR) — exit" >> "$LOG" 2>/dev/null || true
+  exit 0
+fi
+trap 'rm -rf "$LOCKDIR" 2>/dev/null' EXIT INT TERM
 # Cert rieng cho curl/wget tren may (he thong thieu issuer): Rust dung webpki-roots nen khong can.
 export SSL_CERT_FILE="$APP/certs/cacert.pem"
 if [ ! -f "$SSL_CERT_FILE" ] && [ -f /etc/ssl/certs/ca-certificates.crt ]; then
@@ -42,7 +57,10 @@ while :; do
   wait "$APP_PID"
   EXIT_CODE=$?
   if [ "$EXIT_CODE" != "43" ] && [ -n "${OTA_PID:-}" ]; then
+    # Giet ca nhom OTA (khong chi subshell) tranh orphan ota-update.sh chay nen.
     kill "$OTA_PID" 2>/dev/null || true
+    sleep 1
+    kill -9 "$OTA_PID" 2>/dev/null || true
     OTA_PID=""
     OTA_STARTED=0
   fi

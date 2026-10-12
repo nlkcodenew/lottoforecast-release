@@ -52,15 +52,16 @@ is_protected() {
   esac
   return 1
 }
-# So sanh version dang x.y... (bo hau to chu nhu -phase1 khi so).
-# Tra 0 = a moi hon b.
+# So sanh version dang x.y... (bo hau to chu nhu -phase1/-beta khi so).
+# Tra 0 = a moi hon b. Dong nhat cmp_version() Rust: so bang nhau thi ban
+# on dinh (khong hau to) moi hon beta cung so (beta->stable la update).
 ver_newer() {
   a="$1"; b="$2"
   [ "$a" = "$b" ] && return 1
   i=1
   while :; do
     pa="$(echo "$a" | cut -d. -f$i 2>/dev/null)"; pb="$(echo "$b" | cut -d. -f$i 2>/dev/null)"
-    [ -z "$pa$pb" ] && return 1
+    [ -z "$pa$pb" ] && break
     pa="${pa%%[!0-9]*}"; pb="${pb%%[!0-9]*}"
     [ -z "$pa" ] && pa=0; [ -z "$pb" ] && pb=0
     pa="$(echo "$pa" | sed 's/^0*//')"; pb="$(echo "$pb" | sed 's/^0*//')"
@@ -68,8 +69,13 @@ ver_newer() {
     if [ "$pa" -gt "$pb" ] 2>/dev/null; then return 0; fi
     if [ "$pa" -lt "$pb" ] 2>/dev/null; then return 1; fi
     i=$((i + 1))
-    [ "$i" -gt 8 ] && return 1
+    [ "$i" -gt 8 ] && break
   done
+  # Phan so bang nhau: stable (khong "-") moi hon prerelease cung so.
+  case "$a" in *"-"*) a_pre=1;; *) a_pre=0;; esac
+  case "$b" in *"-"*) b_pre=1;; *) b_pre=0;; esac
+  if [ "$a_pre" = "0" ] && [ "$b_pre" = "1" ]; then return 0; fi
+  return 1
 }
 fetch() {
   url="$1"; out="$2"
