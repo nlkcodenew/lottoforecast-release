@@ -41,12 +41,12 @@
       "size": 10755
     }
   ],
-  "kid": "r4",
+  "kid": "r3",
   "release_asset": {
     "name": "lottoforecast-v0.1.18.zip",
     "sha256": "437a963af96604f0b4a02b63c58fdfc268653eb918bc5055e7c3e4886a291555",
     "size": 3287497
   },
-  "signature": "an-gjgYXry9DDK3l2aFBoHpxinP6D_UQY0MhfeEm9ldLlYnWe6SjmsaaQh7GVg-tVFAA5RZ_IkP69GXjfUJFBg",
+  "signature": "HgmNQj9lL82oNUulWMf2J0F_2nsHkkbe0gd_eYSBBybZmcBQ1hgrBA2qPVypjSXwqi1MrhJ_OnJNlOBXNK_UAQ",
   "version": "0.1.18"
 }
